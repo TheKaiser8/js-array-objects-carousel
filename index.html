@@ -5,9 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carosello Array di Oggetti</title>
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    
+    <!-- /Font-awesome -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- MILESTONE 0: creazione MARKUP STATICO -->
+    <div class="container">
+        <div class="items">
+            <!-- box immagine visualizzata -->
+            <div class="box-image">
+                <img class="img-fluid" src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+                <div class="info-image text-white text-right">
+                    <h3>Marvel's Spiderman Miles Morale</h3>
+                    <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+                </div>
+            </div>
+            <!-- /box immagine visualizzata -->
+            <!-- box anteprime -->
+            <div class="box-previews">
+                <div class="item-preview active-preview">
+                    <img class="img-fluid img-preview" src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+                </div>
+                <div class="item-preview">
+                    <img class="img-fluid img-preview" src="img/02.webp" alt="Ratchet & Clank: Rift Apart">
+                </div>
+                <div class="item-preview">
+                    <img class="img-fluid img-preview" src="img/03.webp" alt="Fortnite">
+                </div>
+                <div class="item-preview">
+                    <img class="img-fluid img-preview" src="img/04.webp" alt="Stray">
+                </div>
+                <div class="item-preview">
+                    <img class="img-fluid img-preview" src="img/05.webp" alt="Marvel's Avengers">
+                </div>
+                <!-- pulsanti slider -->
+                <div class="previous"><i class="fa-solid fa-chevron-up"></i></div>
+                <div class="next"><i class="fa-solid fa-chevron-down"></i></div>
+                <!-- /pulsanti slider -->
+            </div>
+            <!-- box anteprime -->
+        </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 </html>
