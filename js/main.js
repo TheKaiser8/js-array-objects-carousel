@@ -61,6 +61,7 @@ let currentImageIndex = 0;
 const currentBoxImage = document.querySelector('.box-current-image');
 // seleziono il container del box current image salvandolo in una variabile
 const boxPreviews = document.querySelector('.box-previews');
+
 /*------------------
     MAIN
 --------------------*/
@@ -85,3 +86,20 @@ images.forEach((element, index) => {
     // appendo il template box previews
     boxPreviews.append(templateBoxPreviews);
 });
+
+// creo una variabile per selezionare tutte le previews
+const previews = document.querySelectorAll('.item-preview');
+// creo evento click del button next
+const btnNext = document.querySelector('.next').addEventListener('click', function() {
+    // rimuovo la classe active-preview all'immagine corrente
+    previews[currentImageIndex].classList.remove('active-preview');
+    // incremento l'indice per passare alla preview successiva
+    currentImageIndex++;
+    // aggiungo la classe active-preview alla preview successiva diventata immagine corrente
+    previews[currentImageIndex].classList.add('active-preview');
+    // cambio immagine principale nel box current image
+    currentBoxImage.querySelector('.img-fluid').setAttribute("src", images[currentImageIndex].image);
+    currentBoxImage.querySelector('.img-fluid').setAttribute("alt", images[currentImageIndex].title);
+    currentBoxImage.querySelector('.info-image h3').innerHTML = images[currentImageIndex].title;
+    currentBoxImage.querySelector('.info-image p').innerHTML = images[currentImageIndex].text;
+})
