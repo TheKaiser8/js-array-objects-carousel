@@ -15,11 +15,11 @@
     <div class="container">
         <!-- box immagine visualizzata -->
         <div class="box-current-image">
-            <img class="img-fluid" src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+            <!-- <img class="img-fluid" src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
             <div class="info-image text-white text-right">
                 <h3>Marvel's Spiderman Miles Morale</h3>
                 <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
-            </div>
+            </div> -->
         </div>
         <!-- /box immagine visualizzata -->
         <!-- box anteprime -->
@@ -46,6 +46,21 @@
         </div>
         <!-- /box anteprime -->
     </div>
+
+    <template id="template-box-current-image">
+        <img class="img-fluid" src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+        <div class="info-image text-white text-right">
+            <h3>Marvel's Spiderman Miles Morale</h3>
+            <p>Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.</p>
+        </div>
+    </template>
+
+    <template id="template-box-previews">
+        <div class="item-preview active-preview">
+            <img class="img-fluid" src="img/01.webp" alt="Marvel's Spiderman Miles Morale">
+        </div>
+    </template>
+
     <script src="js/main.js"></script>
 </body>
 </html>

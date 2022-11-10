@@ -24,29 +24,52 @@
 // BONUS 3:
 // Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
-/*------------------
-    MAIN
---------------------*/
 const images = [
     {
         image: 'img/01.webp',
         title: 'Marvel\'s Spiderman Miles Morale',
         text: 'Experience the rise of Miles Morales as the new hero masters incredible, explosive new powers to become his own Spider-Man.',
-    }, {
+    }, 
+    {
         image: 'img/02.webp',
         title: 'Ratchet & Clank: Rift Apart',
         text: 'Go dimension-hopping with Ratchet and Clank as they take on an evil emperor from another reality.',
-    }, {
+    }, 
+    {
         image: 'img/03.webp',
         title: 'Fortnite',
         text: "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
-    }, {
+    }, 
+    {
         image: 'img/04.webp',
         title: 'Stray',
         text: 'Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city',
-    }, {
+    }, 
+    {
         image: 'img/05.webp',
         title: "Marvel's Avengers",
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+/*----------------------
+    MAIN VARIABLES
+----------------------*/
+// creo una variabile per selezionare l'immagine tramite il suo indice
+let currentImageIndex = 0;
+// seleziono il container del box current image salvandolo in una variabile
+const currentBoxImage = document.querySelector('.box-current-image');
+
+/*------------------
+    MAIN
+--------------------*/
+// clono il template del box current image e stampo in HTML
+const templateBoxImage = document.getElementById('template-box-current-image').content.cloneNode(true);
+templateBoxImage.querySelector('.img-fluid').setAttribute("src", images[currentImageIndex].image);
+templateBoxImage.querySelector('.img-fluid').setAttribute("alt", images[currentImageIndex].title);
+templateBoxImage.querySelector('.info-image h3').innerHTML = images[currentImageIndex].title;
+templateBoxImage.querySelector('.info-image p').innerHTML = images[currentImageIndex].text;
+// appendo il template current box image
+currentBoxImage.append(templateBoxImage);
+
+
