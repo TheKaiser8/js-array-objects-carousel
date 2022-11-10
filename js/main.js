@@ -59,7 +59,8 @@ const images = [
 let currentImageIndex = 0;
 // seleziono il container del box current image salvandolo in una variabile
 const currentBoxImage = document.querySelector('.box-current-image');
-
+// seleziono il container del box current image salvandolo in una variabile
+const boxPreviews = document.querySelector('.box-previews');
 /*------------------
     MAIN
 --------------------*/
@@ -72,4 +73,15 @@ templateBoxImage.querySelector('.info-image p').innerHTML = images[currentImageI
 // appendo il template current box image
 currentBoxImage.append(templateBoxImage);
 
-
+// creo un ciclo forEach per ciclare le immagini del box previews
+images.forEach((element, index) => {
+    // clono il template del box previews e stampo in HTML
+    const templateBoxPreviews = document.getElementById('template-box-previews').content.cloneNode(true);
+    templateBoxPreviews.querySelector('.img-fluid').setAttribute("src", element.image);
+    templateBoxPreviews.querySelector('.img-fluid').setAttribute("alt", element.title);
+    if( index === currentImageIndex ) {
+        templateBoxPreviews.querySelector('.item-preview').classList.add('active-preview');
+    }
+    // appendo il template box previews
+    boxPreviews.append(templateBoxPreviews);
+});
