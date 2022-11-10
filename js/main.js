@@ -94,7 +94,11 @@ const btnNext = document.querySelector('.next').addEventListener('click', functi
     // rimuovo la classe active-preview all'immagine corrente
     previews[currentImageIndex].classList.remove('active-preview');
     // incremento l'indice per passare alla preview successiva
-    currentImageIndex++;
+    if( currentImageIndex < images.length -1 ) {
+        currentImageIndex++;
+    } else {
+        currentImageIndex = 0;
+    }
     // aggiungo la classe active-preview alla preview successiva diventata immagine corrente
     previews[currentImageIndex].classList.add('active-preview');
     // cambio immagine principale nel box current image
@@ -109,7 +113,11 @@ const btnPrevious = document.querySelector('.previous').addEventListener('click'
     // rimuovo la classe active-preview all'immagine corrente
     previews[currentImageIndex].classList.remove('active-preview');
     // decremento l'indice per passare alla preview precedente
-    currentImageIndex--;
+    if( currentImageIndex > 0 ) {
+        currentImageIndex--;
+    } else {
+        currentImageIndex = images.length - 1;
+    }
     // aggiungo la classe active-preview alla preview precedente diventata immagine corrente
     previews[currentImageIndex].classList.add('active-preview');
     // cambio immagine principale nel box current image
