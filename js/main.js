@@ -102,4 +102,19 @@ const btnNext = document.querySelector('.next').addEventListener('click', functi
     currentBoxImage.querySelector('.img-fluid').setAttribute("alt", images[currentImageIndex].title);
     currentBoxImage.querySelector('.info-image h3').innerHTML = images[currentImageIndex].title;
     currentBoxImage.querySelector('.info-image p').innerHTML = images[currentImageIndex].text;
-})
+});
+
+// creo evento click del button previous
+const btnPrevious = document.querySelector('.previous').addEventListener('click', function() {
+    // rimuovo la classe active-preview all'immagine corrente
+    previews[currentImageIndex].classList.remove('active-preview');
+    // decremento l'indice per passare alla preview precedente
+    currentImageIndex--;
+    // aggiungo la classe active-preview alla preview precedente diventata immagine corrente
+    previews[currentImageIndex].classList.add('active-preview');
+    // cambio immagine principale nel box current image
+    currentBoxImage.querySelector('.img-fluid').setAttribute("src", images[currentImageIndex].image);
+    currentBoxImage.querySelector('.img-fluid').setAttribute("alt", images[currentImageIndex].title);
+    currentBoxImage.querySelector('.info-image h3').innerHTML = images[currentImageIndex].title;
+    currentBoxImage.querySelector('.info-image p').innerHTML = images[currentImageIndex].text;
+});
