@@ -16,24 +16,25 @@
     text-align: right;
 }
 /*------------------
+    COMMON
+-------------------*/
+body {
+    height: 100vh;
+    display: flex;
+    /* flex-direction: column; */
+}
+/*------------------
     MAIN
 -------------------*/
 .container {
-    max-width: 53.75rem;
-    height: 100vh;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.items {
     width: 100%;
+    max-width: 53.75rem;
     height: 18.75rem;
+    margin: auto;
     display: flex;
 }
-.box-image {
+.box-current-image {
     width: 80%;
-    height: 100%;
     position: relative;
 }
 .img-fluid {
@@ -49,14 +50,10 @@
 }
 .box-previews {
     width: 20%;
-    height: 100%;
     position: relative;
 }
 .item-preview {
     height: calc(100% / 5);
-}
-.img-preview {
-    display: block;
 }
 /*----------------
     COMPONENTS
