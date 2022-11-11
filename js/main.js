@@ -52,6 +52,36 @@ const images = [
     }
 ];
 
+/*------------------
+    FUNCTIONS
+--------------------*/
+function changeImage(direction) {
+    // rimuovo la classe active-preview all'immagine corrente
+    previews[currentImageIndex].classList.remove('active-preview');
+    // incremento l'indice per passare alla preview successiva
+    if( direction === 'next') {
+        if( currentImageIndex < images.length -1 ) {
+            currentImageIndex++;
+        } else {
+            currentImageIndex = 0;
+        }
+    } else if ( direction === 'previous') {
+        // decremento l'indice per passare alla preview precedente
+        if( currentImageIndex > 0 ) {
+            currentImageIndex--;
+        } else {
+            currentImageIndex = images.length - 1;
+        }
+    }
+    // aggiungo la classe active-preview alla preview diventata immagine corrente
+    previews[currentImageIndex].classList.add('active-preview');
+    // cambio immagine principale nel box current image
+    currentBoxImage.querySelector('.img-fluid').setAttribute("src", images[currentImageIndex].image);
+    currentBoxImage.querySelector('.img-fluid').setAttribute("alt", images[currentImageIndex].title);
+    currentBoxImage.querySelector('.info-image h3').innerHTML = images[currentImageIndex].title;
+    currentBoxImage.querySelector('.info-image p').innerHTML = images[currentImageIndex].text;
+}
+
 /*----------------------
     MAIN VARIABLES
 ----------------------*/
@@ -89,40 +119,13 @@ images.forEach((element, index) => {
 
 // creo una variabile per selezionare tutte le previews
 const previews = document.querySelectorAll('.item-preview');
+
 // creo evento click del button next
 const btnNext = document.querySelector('.next').addEventListener('click', function() {
-    // rimuovo la classe active-preview all'immagine corrente
-    previews[currentImageIndex].classList.remove('active-preview');
-    // incremento l'indice per passare alla preview successiva
-    if( currentImageIndex < images.length -1 ) {
-        currentImageIndex++;
-    } else {
-        currentImageIndex = 0;
-    }
-    // aggiungo la classe active-preview alla preview successiva diventata immagine corrente
-    previews[currentImageIndex].classList.add('active-preview');
-    // cambio immagine principale nel box current image
-    currentBoxImage.querySelector('.img-fluid').setAttribute("src", images[currentImageIndex].image);
-    currentBoxImage.querySelector('.img-fluid').setAttribute("alt", images[currentImageIndex].title);
-    currentBoxImage.querySelector('.info-image h3').innerHTML = images[currentImageIndex].title;
-    currentBoxImage.querySelector('.info-image p').innerHTML = images[currentImageIndex].text;
+    changeImage('next');
 });
 
 // creo evento click del button previous
 const btnPrevious = document.querySelector('.previous').addEventListener('click', function() {
-    // rimuovo la classe active-preview all'immagine corrente
-    previews[currentImageIndex].classList.remove('active-preview');
-    // decremento l'indice per passare alla preview precedente
-    if( currentImageIndex > 0 ) {
-        currentImageIndex--;
-    } else {
-        currentImageIndex = images.length - 1;
-    }
-    // aggiungo la classe active-preview alla preview precedente diventata immagine corrente
-    previews[currentImageIndex].classList.add('active-preview');
-    // cambio immagine principale nel box current image
-    currentBoxImage.querySelector('.img-fluid').setAttribute("src", images[currentImageIndex].image);
-    currentBoxImage.querySelector('.img-fluid').setAttribute("alt", images[currentImageIndex].title);
-    currentBoxImage.querySelector('.info-image h3').innerHTML = images[currentImageIndex].title;
-    currentBoxImage.querySelector('.info-image p').innerHTML = images[currentImageIndex].text;
+    changeImage('previous');
 });

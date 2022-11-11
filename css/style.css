@@ -81,3 +81,6 @@ body {
 .active-preview {
     border: 2px solid #cccccc;
 }
+.item-preview:not(.active-preview) {
+    filter: brightness(0.5);
+}
