@@ -19,8 +19,7 @@
 
 // BONUS 1:
 // Aggiungere le thumbnails (sottoforma di miniatura) ed al click attivare l’immagine corrispondente.
-// BONUS 2:
-// Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
+
 // BONUS 3:
 // Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay.
 
@@ -129,3 +128,9 @@ const btnNext = document.querySelector('.next').addEventListener('click', functi
 const btnPrevious = document.querySelector('.previous').addEventListener('click', function() {
     changeImage('previous');
 });
+
+// BONUS 2:
+// Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
+let autoplay = setInterval(function() {
+    changeImage('next');
+}, 3000);
