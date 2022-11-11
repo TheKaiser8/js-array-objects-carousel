@@ -87,9 +87,9 @@ function changeImage(direction) {
 ----------------------*/
 // creo una variabile per selezionare l'immagine tramite il suo indice
 let currentImageIndex = 0;
-// seleziono il container del box current image salvandolo in una variabile
+// seleziono il box current image salvandolo in una variabile
 const currentBoxImage = document.querySelector('.box-current-image');
-// seleziono il container del box current image salvandolo in una variabile
+// seleziono il box previews salvandolo in una variabile
 const boxPreviews = document.querySelector('.box-previews');
 
 /*------------------
